@@ -59,7 +59,7 @@ public class Usercontorller {
 	@CrossOrigin(origins = "*")
 	@ResponseBody
 	public String execute(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int id) {
-		// img为图片的二进制流
+		// img涓哄浘鐗囩殑浜岃繘鍒舵祦
 		InputStream inputStream;
 		try {
 			User user = userService.getUserById(id);
@@ -82,8 +82,8 @@ public class Usercontorller {
 	@RequestMapping("/addUserShow") 
 	public String addUserShow(Map<String, Object> map) {
 		Map<Integer, String> mapSex = new HashMap<>();
-		mapSex.put(0, "男");
-		mapSex.put(1, "女");
+		mapSex.put(0, "鐢�");
+		mapSex.put(1, "濂�");
 		System.out.println("88888");
 		map.put("sex", mapSex);
 		map.put("user", new User());
@@ -91,7 +91,7 @@ public class Usercontorller {
 	}
 
 	
-	@RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)//删除
+	@RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)//鍒犻櫎
 	public String delete(@PathVariable("id") Integer id){
 		User user = new User();
 		user.setId(id);
@@ -99,21 +99,21 @@ public class Usercontorller {
 		return "redirect:/users";
 	}
 	
-	@RequestMapping(value="/user/{id}",method=RequestMethod.GET)//修改回响
+	@RequestMapping(value="/user/{id}",method=RequestMethod.GET)//淇敼鍥炲搷
 	public String updateShow(@PathVariable("id")int id,Map<String,Object> map)
 	{
 		User user = userService.getUserById(id);
 		map.put("user", user);
 		
 		Map<Integer, String> mapSex = new HashMap<>();
-		mapSex.put(0, "男");
-		mapSex.put(1, "女");
+		mapSex.put(0, "鐢�");
+		mapSex.put(1, "濂�");
 		System.out.println("0000000");
 		map.put("sex", mapSex);
 		return "input";
 	}
 
-	@RequestMapping(value = "/user", method = RequestMethod.POST)//添加保存
+	@RequestMapping(value = "/user", method = RequestMethod.POST)//娣诲姞淇濆瓨
 	public String addUser(@Valid User user,Errors value, @RequestParam("head") MultipartFile uploadFile) {
 		System.out.println(value);
 		try {
@@ -124,7 +124,7 @@ public class Usercontorller {
 
 			File file = new File("C:\\Users\\Administrator\\Desktop\\hah" + File.separator + fileName + "."
 					+ names[names.length - 1]);
-			InputStream inputStream = uploadFile.getInputStream();// 获取到文件上传的流
+			InputStream inputStream = uploadFile.getInputStream();// 鑾峰彇鍒版枃浠朵笂浼犵殑娴�
 				System.out.println("77777777777");
 			OutputStream outputStream = new FileOutputStream(file);
 			System.out.println("333");
@@ -165,7 +165,7 @@ public class Usercontorller {
 			System.out.println("5656");
 			File file = new File("C:\\Users\\Administrator\\Desktop\\hah" + File.separator + fileName + "."
 					+ names[names.length - 1]);
-			InputStream inputStream = uploadFile.getInputStream();// 获取到文件上传的流
+			InputStream inputStream = uploadFile.getInputStream();// 鑾峰彇鍒版枃浠朵笂浼犵殑娴�
 
 			OutputStream outputStream = new FileOutputStream(file);
 			byte[] b = new byte[1024];
