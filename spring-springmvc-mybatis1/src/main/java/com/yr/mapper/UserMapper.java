@@ -6,18 +6,18 @@ import com.yr.entity.User;
 
 public interface UserMapper {
 
-	// ²éÑ¯ËùÓĞÊı¾İ
+	// æŸ¥è¯¢æ‰€æœ‰æ•°æ®
 	public List<User> getUsers();
 
-	// Ìí¼ÓÊı¾İ
+	// æ·»åŠ æ•°æ®
 	public void addUser(User user);
 
-	// ĞŞÍ¼Êı¾İ updateUser
+	// ä¿®å›¾æ•°æ® updateUser
 	public void updateUser(User user);
 
-	// ĞŞ¸Ä»ØÏÔÊı¾İ getUserById
+	// ä¿®æ”¹å›æ˜¾æ•°æ® getUserById
 	public User getUserById(Integer id);
 
-	// É¾³ıÊı¾İ deleteUser
+	// åˆ é™¤æ•°æ® deleteUser
 	public void deleteUser(User user);
 }

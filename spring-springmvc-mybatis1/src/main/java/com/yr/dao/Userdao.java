@@ -18,7 +18,7 @@ public class Userdao {
 	private UserMapper userMapper;
 
 	/**
-	 * 查询数据
+	 * 鏌ヨ鏁版嵁
 	 * 
 	 * @return
 	 */
@@ -29,7 +29,7 @@ public class Userdao {
 	}
 
 	/**
-	 * 添加数据
+	 * 娣诲姞鏁版嵁
 	 * 
 	 * @param user
 	 */
@@ -40,7 +40,7 @@ public class Userdao {
 	}
 
 	/**
-	 * 修改数据
+	 * 淇敼鏁版嵁
 	 * 
 	 * @param user
 	 */
@@ -50,7 +50,7 @@ public class Userdao {
 	}
 
 	/**
-	 * 修改回显数据
+	 * 淇敼鍥炴樉鏁版嵁
 	 * 
 	 * @param id
 	 * @return
@@ -61,7 +61,7 @@ public class Userdao {
 	}
 
 	/**
-	 * 删除
+	 * 鍒犻櫎
 	 * 
 	 * @param user
 	 */
