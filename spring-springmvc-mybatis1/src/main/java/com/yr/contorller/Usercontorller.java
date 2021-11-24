@@ -39,7 +39,7 @@ public class Usercontorller {
 	}
 	 
 	
-	@Autowired   //hahhahha
+	@Autowired   //hahhahha 修改了一下
 	private Userservice userService;
 
 	@RequestMapping("/users")
