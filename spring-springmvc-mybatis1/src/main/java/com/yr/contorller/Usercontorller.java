@@ -39,11 +39,11 @@ public class Usercontorller {
 	}
 	 
 	
-	@Autowired   //hahhahha ĞŞ¸ÄÁËÒ»ÏÂ
+	@Autowired   //hahhahha ä¿®æ”¹äº†ä¸€ä¸‹hahah
 	private Userservice userService;
 
 	@RequestMapping("/users")
-	public String getUsers(Map<String, Object> map) {  //²éÑ¯
+	public String getUsers(Map<String, Object> map) {  //æŸ¥è¯¢
 		List<User> users = userService.getUsers();
 		map.put("users", users);
 		return "list";
@@ -59,7 +59,7 @@ public class Usercontorller {
 	@CrossOrigin(origins = "*")
 	@ResponseBody
 	public String execute(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int id) {
-		// imgÎªÍ¼Æ¬µÄ¶ş½øÖÆÁ÷
+		// imgä¸ºå›¾ç‰‡çš„äºŒè¿›åˆ¶æµ
 		InputStream inputStream;
 		try {
 			User user = userService.getUserById(id);
@@ -82,8 +82,8 @@ public class Usercontorller {
 	@RequestMapping("/addUserShow") 
 	public String addUserShow(Map<String, Object> map) {
 		Map<Integer, String> mapSex = new HashMap<>();
-		mapSex.put(0, "ÄĞ");
-		mapSex.put(1, "Å®");
+		mapSex.put(0, "ç”·");
+		mapSex.put(1, "å¥³");
 		System.out.println("88888");
 		map.put("sex", mapSex);
 		map.put("user", new User());
@@ -91,7 +91,7 @@ public class Usercontorller {
 	}
 
 	
-	@RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)//É¾³ı
+	@RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)//åˆ é™¤
 	public String delete(@PathVariable("id") Integer id){
 		User user = new User();
 		user.setId(id);
@@ -99,21 +99,21 @@ public class Usercontorller {
 		return "redirect:/users";
 	}
 	
-	@RequestMapping(value="/user/{id}",method=RequestMethod.GET)//ĞŞ¸Ä»ØÏì
+	@RequestMapping(value="/user/{id}",method=RequestMethod.GET)//ä¿®æ”¹å›å“
 	public String updateShow(@PathVariable("id")int id,Map<String,Object> map)
 	{
 		User user = userService.getUserById(id);
 		map.put("user", user);
 		
 		Map<Integer, String> mapSex = new HashMap<>();
-		mapSex.put(0, "ÄĞ");
-		mapSex.put(1, "Å®");
+		mapSex.put(0, "ç”·");
+		mapSex.put(1, "å¥³");
 		System.out.println("0000000");
 		map.put("sex", mapSex);
 		return "input";
 	}
 
-	@RequestMapping(value = "/user", method = RequestMethod.POST)//Ìí¼Ó±£´æ
+	@RequestMapping(value = "/user", method = RequestMethod.POST)//æ·»åŠ ä¿å­˜
 	public String addUser(@Valid User user,Errors value, @RequestParam("head") MultipartFile uploadFile) {
 		System.out.println(value);
 		try {
@@ -124,7 +124,7 @@ public class Usercontorller {
 
 			File file = new File("C:\\Users\\Administrator\\Desktop\\hah" + File.separator + fileName + "."
 					+ names[names.length - 1]);
-			InputStream inputStream = uploadFile.getInputStream();// »ñÈ¡µ½ÎÄ¼şÉÏ´«µÄÁ÷
+			InputStream inputStream = uploadFile.getInputStream();// è·å–åˆ°æ–‡ä»¶ä¸Šä¼ çš„æµ
 				System.out.println("77777777777");
 			OutputStream outputStream = new FileOutputStream(file);
 			System.out.println("333");
@@ -165,7 +165,7 @@ public class Usercontorller {
 			System.out.println("5656");
 			File file = new File("C:\\Users\\Administrator\\Desktop\\hah" + File.separator + fileName + "."
 					+ names[names.length - 1]);
-			InputStream inputStream = uploadFile.getInputStream();// »ñÈ¡µ½ÎÄ¼şÉÏ´«µÄÁ÷
+			InputStream inputStream = uploadFile.getInputStream();// è·å–åˆ°æ–‡ä»¶ä¸Šä¼ çš„æµ
 
 			OutputStream outputStream = new FileOutputStream(file);
 			byte[] b = new byte[1024];
