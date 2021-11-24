@@ -37,8 +37,9 @@ public class Usercontorller {
 	public Usercontorller() {
 		System.out.println(111);
 	}
+	 
 	
-	@Autowired
+	@Autowired   //hahhahha 修改了一下
 	private Userservice userService;
 
 	@RequestMapping("/users")
