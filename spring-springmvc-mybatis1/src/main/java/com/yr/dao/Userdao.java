@@ -17,6 +17,8 @@ public class Userdao {
 	@Autowired
 	private UserMapper userMapper;
 
+	//aaddd
+	
 	/**
 	 * 查询数据
 	 * 
